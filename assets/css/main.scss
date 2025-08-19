@@ -41,3 +41,26 @@
     "vendor/font-awesome/brands",
     "vendor/magnific-popup/magnific-popup"
 ;
+
+/* Ensure publication titles never underline */
+.pub-title {
+  font-weight: 600;       /* bold style if you want */
+  text-decoration: none;  /* remove underline by default */
+}
+
+.pub-title:hover {
+  text-decoration: none !important; /* make sure hover doesn't add underline */
+  cursor: default;                   /* prevents "link-like" cursor */
+}
+
+/* Your overrides go *after* the imports */
+h2.archive__item-title,
+h2.archive__item-title:hover,
+.archive__item:hover h2.archive__item-title,
+h2.archive__item-title .pub-title,
+h2.archive__item-title:hover .pub-title {
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  cursor: default !important;
+}
