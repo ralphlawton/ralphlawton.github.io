@@ -2,6 +2,92 @@
    ARCHIVE
    ========================================================================== */
 
+/* ==========================================================================
+   PUBLICATION LIST (clean academic format)
+   ========================================================================== */
+
+.pub__title {
+  font-size: 1.05em;
+  margin-top: 0.1em;
+  margin-bottom: 0.2em;
+  font-family: $sans-serif-narrow;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.pub__authors {
+  font-size: $type-size-6;
+  color: mix(#fff, #494e52, 35%);
+  margin: 0.1em 0 0.1em;
+  font-style: normal;
+}
+
+.pub__venue {
+  font-size: $type-size-6;
+  color: mix(#fff, #494e52, 35%);
+  margin: 0.1em 0 0.1em;
+}
+
+.pub__notes {
+  font-size: $type-size-6;
+  color: mix(#fff, #494e52, 35%);
+  margin: 0.1em 0 0.1em;
+}
+
+.pub__abstract-details {
+  margin-top: 0.5em;
+
+  summary.pub__abstract-toggle {
+    cursor: pointer;
+    font-size: $type-size-6;
+    color: var(--link-color, #52adc8);
+    user-select: none;
+    list-style: none;
+    display: inline-block;
+
+    &::before {
+      content: "[ Abstract ]";
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &[open] summary.pub__abstract-toggle::before {
+    content: "[ Abstract \2212 ]";
+  }
+
+  .pub__abstract-text {
+    font-size: $type-size-6;
+    margin-top: 0.6em;
+    padding: 0.75em 1em;
+    border-left: 3px solid var(--global-border-color, #f2f3f3);
+    color: mix(#fff, #494e52, 15%);
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+/* Tighten up the hr separators on the research page */
+.page__content hr {
+  margin: 1.2em 0;
+  border-color: var(--global-border-color, #f2f3f3);
+}
+
 .archive {
   margin-bottom: 2em;
 

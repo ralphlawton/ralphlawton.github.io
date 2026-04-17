@@ -1,0 +1,31 @@
+---
+layout: archive            
+title:  "Research"
+permalink: /research/      
+author_profile: true       
+---
+
+
+{% include base_path %}
+
+<!-- ======  LOOP THROUGH _publications ====== -->
+{% comment %}
+1.  Grab the collection.
+2.  Sort newest → oldest (change ‘reversed’ to remove that).
+3.  Custom header for Working Papers (category wp) first.
+{% endcomment %}
+
+{% assign working = site.publications | where: "category", "wp" %}
+{% assign published = site.publications | reject: "category", "wp" %}
+
+{% if working != empty %}
+## Working Papers & In-progress
+{% for post in working reversed %}
+{% include archive-single.html type="list" %}
+{% endfor %}
+{% endif %}
+
+## Published & Accepted
+{% for post in published reversed %}
+{% include archive-single.html type="list" %}
+{% endfor %}
